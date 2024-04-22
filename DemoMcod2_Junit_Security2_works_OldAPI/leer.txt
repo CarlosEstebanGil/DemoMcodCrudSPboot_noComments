@@ -1,0 +1,48 @@
+funciona:
+
+version mito final renombrada y sin basura ni comentarios lista xa subir tmp xa busqueda laboral a github luego lo pongo private
+
+Saber: 
+
+no usa roles desde db ( los pone hardcodeados o los basicos q vienen ) 
+no usa ctrl de roles @requiredauthority en los api rest ( en los controllers)
+	( x eso no usa @many to many y tablas de roles, usuarios, permisos q seria mas real ) 
+no usa el api nuevo muy diferente del springboot security 6 ( actual sept 2023)
+no usa JWT ( security tokens ) (+ real ) 
+no usa hateoas
+
+( usa api viejo spring secutity 2.1.3.RELEASE y xa compat usa java 11 ) 
+
+no usa ssl http pero no se si igual ya es seguro por  spring security framework o si hay q hacer algo aparte xa ssl y http (?)
+
+se arranca con: maven -> maven upodate yl run as -> maven clean yl run as maven build -> goal: spring-boot:run
+	y
+se prueba con: 
+
+http://localhost:9898/personas/listAllPers 
+
+login: usuario: gil gerosa  clave: 789 ( creada x test q llama sin rollbacks a servicio put o post con ese user y usa Bcrypt encoder
+					xa esa clave de gil gerosa q envia como datos de insert , luego el dcrypt auto fmk sabe
+					q 781 corresp al hash guardado en DB , pero no debo poner usuarios de db q no hayan 
+					sido sus calves generadas desde mi app usando el bcrypt sino el dcrypt las va a deco 
+					y no van a coincidir , eso puedo poner  o bardear clacve user mal en el login xa q q
+				pasa cuando falla ( spoiler: te revuelve a preg el login pero no te ejec el svc h' un lñogin ok)
+
+pend: lo subo a la nube gratis ( ver mito code tuto capitulo final del curso de springboot ) y se puede acceder asi 
+	tmb podria generar un docker
+	tmb podria dejar el proy total es maven y no es tan dificil de q alguien lo baje y lo corra ya q descarga todo auto
+
+pend: no usé git , ni mokito , ni lombok 
+
+
+SABERRRRR IMPORTANTE: ESTE PROJECT ES XA MI XQ ES LA VERS DE OLD API MITO SP SECURITY WORKING Q ES EL MISMO Q LA PRUEBA FALLIDA 
+DE MIX Q HABIA HECHO, PERO Q ACA LA MANTENGO PERO COMENTADA COMO OBSERVACION XA MI , ENTONCES
+API FALLIDO COMENTADO Y ENT FUNCIONANDO Y MANTENIENDO ALL COMM ENTS INCLUSO COMENTADOS LOS INTENTOS DE MIX FALLIDOS 
+
+LUEGO AHORA VOY A BASARME EN EL EJEMPLO DE SPRINGBOOT DE YTUBE DE 24 MINS EN ESPAÑOL CON EL NUEVO API DE SPRING SECUTITY 
+Y ESE SERá UN NUEVO PROYECTO DEMOSPRINGSECUTITYWORKING PERO CON NEW API (SEPT 2023) Y FUNCIONANDO Y ENCIMA CON JWT
+
+LUEGO HARé UN COPIA DE ESTE ULTIMO Y ME BASARé EN EL DEL INDIO XA AÑADIR HATEOAS 
+
+
+Y LO DE LOS ROLES FROM DB X AHORA TE LO DEBO MEPA.. Y NO IMPORTA .. 

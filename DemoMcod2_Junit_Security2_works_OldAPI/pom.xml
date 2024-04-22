@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId> 
+	<artifactId>DemoMcod2_Junit_Security2_works_OldAPI</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Demo_mcod</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version><!--17</java.version> -->
+	</properties>
+	<dependencies>
+		<!-- YA VIENE EMBEBIDO, NO HACIA FALTA ADD MANUAL EXPLICITO 
+		added explicitly, by me Logging: log4j 2  . LO COMENTO SINO GENERA ERROR POR SISTEMAS SLF4J DUPLICADO-->
+ 		<!-- dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency -->
+        
+		<!-- added explicitly, by me ( Spring Security ) -> user: user (x default) pass: la que me saca x consola al startear la app  --> 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>  
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- y esta otra q la vi en la doc de ejms de spring de 2023 de la pagina oficial ) -->  
+		<dependency>
+		   <groupId>org.springframework.security</groupId>
+		   <artifactId>spring-security-test</artifactId>
+		   <scope>test</scope>
+	  	</dependency>
+
+		<!-- added explicitly, by me (WEB (rest controllers api restfull etc -> (capa view) ) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- version>3.1.3</version -->
+		</dependency>
+	
+		<!-- added explicitly, by me (JPA) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<!-- version>3.1.3</version -->
+		</dependency> 
+	
+		<!-- added explicitly, by me (dbms ej postgre embebido en spring) -->
+					
+			<!-- dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				  <version>42.6.0</version> esta linea solo para posgre  
+				<scope>runtime</scope>
+			</dependency>  -->
+
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.1.0</version>
+			<scope>runtime</scope>
+		</dependency> 
+			
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
